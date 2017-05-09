@@ -524,6 +524,10 @@ void SuplaDeviceClass::iterate(void) {
 		    	supla_log(LOG_DEBUG, "Connection fail. Server: %s", Params.server);
 		    	Params.cb.svr_disconnect();
 				delay(2000);
+			void(* resetFunc) (void) = 0; // Reset MC function
+                     resetFunc();
+			
+			
 				return;
 		}
 	}
